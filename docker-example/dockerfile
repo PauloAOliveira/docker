@@ -2,4 +2,4 @@ FROM openjdk:8u151-jre-alpine
 
 COPY  target/docker-example.jar .
 
-CMD ["java", "-jar", "docker-example.jar"]
+ENTRYPOINT ["java", "-jar", "docker-example.jar"]
