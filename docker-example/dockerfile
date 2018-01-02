@@ -2,4 +2,6 @@ FROM openjdk:8u151-jre-alpine
 
 COPY  target/docker-example.jar .
 
+VOLUME /tmp
+
 ENTRYPOINT ["java", "-jar", "docker-example.jar"]

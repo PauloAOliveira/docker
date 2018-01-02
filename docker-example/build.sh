@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mvn clean package
+mvn clean package -DskipTests
 
 if [ $? -eq 0 ]; then
     echo "Success"
