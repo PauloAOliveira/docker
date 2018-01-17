@@ -2,9 +2,10 @@
 Exemplify docker usage using java spring based project
 
 ## Example of docker commands
+```
 docker ps - list all active containers
 	-a list all containers
-    -qa - list only container's ids
+	-qa - list only container's ids
 docker rm container_id - removes the container from the stack
 	-f - stops and remove the container
 docker rm $(docker ps -qa) - remove all inactive containers
@@ -27,7 +28,8 @@ docker stop container_id - stops a container
 
 docker network commands - interface to manage network between containers
 			   create - creates a network using the default driver(bridge)
-			   
+
+```
 ##
 To build de image just execute the build.sh and run docker with the following command
 docker run -d --name docker-example -v {your_directory}:/tmp -p 8080:8080 docker-example
