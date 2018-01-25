@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 @SpringBootApplication
@@ -71,5 +72,11 @@ class Controller {
 		}else {
 			return ResponseEntity.ok(domain);
 		}
+	}
+
+	@GetMapping(value = "/domain")
+	public ResponseEntity<List<Domain>> getAll() {
+		List<Domain> domains = domainRepository.findAll();
+		return ResponseEntity.ok(domains);
 	}
 }
