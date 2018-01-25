@@ -32,7 +32,7 @@ docker network commands - interface to manage network between containers
 ##
 To build de image just execute the build.sh  
 
-To execute the application there is two ways:  
+To execute the application there are two ways:  
 
 1º  
 docker network create net-example  
