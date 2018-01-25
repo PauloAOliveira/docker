@@ -30,5 +30,21 @@ docker network commands - interface to manage network between containers
 			   create - creates a network using the default driver(bridge)
 ```
 ##
-To build de image just execute the build.sh and run docker with the following command
-docker run -d --name docker-example -v {your_directory}:/tmp -p 8080:8080 docker-example
+To build de image just execute the build.sh  
+
+To execute the application there is two ways:  
+
+1º  
+docker network create net-example  
+docker run -d --name mongo-db -p 27017:27017 -v {your_directory}:/data/db --network net-example mongo  
+docker run -d --name docker-example -v {your_directory}:/tmp -p 8080:8080 --network net-example docker-example  
+
+2º  
+(Change the directories name on the docker-compose.yml)  
+docker-compose up
+
+OBS:  
+To run the application outside a container, use the application-local.properties  
+  
+From java project directory just run:  
+java -jar target/docker-example.jar --spring.config.location=src/main/resources/application-local.properties
